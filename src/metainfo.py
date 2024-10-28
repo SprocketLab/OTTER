@@ -1,0 +1,193 @@
+import os
+
+# Get project root and setup paths
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+base_emb_path = os.path.join(project_root, 'otter_data', 'embeddings') # Most of them are test embeddings, but sometimes val+test, sometimes all
+train_emb_path = os.path.join(project_root, 'otter_data', 'embeddings_train')
+test_emb_path = os.path.join(project_root, 'otter_data', 'embeddings_test')
+result_path = os.path.join(project_root, 'otter_data', 'results')
+
+
+img_dataset_list = [
+    'CIFAR10',
+    'CIFAR100',
+    'Caltech101',
+    'Caltech256',
+    'Food101',
+    'STL10',
+    'SUN397',
+    'Flowers102',
+    'EUROSAT',
+    'OXFORDIIITPET',
+    'STANFORDCARS',
+    'Country211',
+    'DTD',
+    'cub',
+    'imagenet',
+    'imagenet-r',
+    'imagenet-sketch',
+]
+
+img_num_transfer_dataset_list = [
+    'mnist', 'usps', 'svhn'
+]
+
+img_zs_model_list = [
+     'RN50',
+     'RN101',
+     'ViT-B/32',
+     'ViT-B/16',
+     'ViT-L/14'
+]
+
+cifar100_text_label_hierarchy = {
+    'aquatic mammal': ['beaver', 'dolphin', 'otter', 'seal', 'whale'],
+    'fish': ['aquarium fish', 'flatfish', 'ray', 'shark', 'trout'],
+    'flower': ['orchid', 'poppy', 'rose', 'sunflower', 'tulip'],
+    'food container': ['bottle', 'bowl', 'can', 'cup', 'plate'],
+    'fruit and vegetable':	['apple', 'mushroom', 'orange', 'pear', 'sweet pepper'],
+    'household electrical device': ['clock', 'keyboard', 'lamp', 'telephone', 'television'],
+    'household furniture': ['bed', 'chair', 'couch', 'table', 'wardrobe'],
+    'insect': ['bee', 'beetle', 'butterfly', 'caterpillar', 'cockroach'],
+    'large carnivores': ['bear', 'leopard', 'lion', 'tiger', 'wolf'],
+    'large man-made outdoor thing': ['bridge', 'castle', 'house', 'road', 'skyscraper'],
+    'large natural outdoor scene': ['cloud', 'forest', 'mountain', 'plain', 'sea'],
+    'large omnivore or herbivore': ['camel', 'cattle', 'chimpanzee', 'elephant', 'kangaroo'],
+    'medium-sized mammal': ['fox', 'porcupine', 'possum', 'raccoon', 'skunk'],
+    'non-insect invertebrate': ['crab', 'lobster', 'snail', 'spider', 'worm'],
+    'people': ['baby', 'boy', 'girl', 'man', 'woman'],
+    'reptile': ['crocodile', 'dinosaur', 'lizard', 'snake', 'turtle'],
+    'small mammal': ['hamster', 'mouse', 'rabbit', 'shrew', 'squirrel'],
+    'tree': ['maple tree', 'oak tree', 'palm tree', 'pine tree', 'willow tree'],
+    'vehicle': ['bicycle', 'bus', 'motorcycle', 'pickup truck', 'train', 'lawn mower', 'rocket', 'streetcar', 'tank', 'tractor']
+}
+
+
+txt_dataset_list = ['amazon', 'gender', 'civilcomments', 'hatexplain']
+txt_zs_model_list = ['bert','ada']
+
+full_dataset_list = img_dataset_list + img_num_transfer_dataset_list + txt_dataset_list
+
+
+cifar100_num_label_hierarchy = {100: [4, 30, 55, 72, 95],
+ 101: [1, 32, 67, 73, 91],
+ 102: [54, 62, 70, 82, 92],
+ 103: [9, 10, 16, 28, 61],
+ 104: [0, 51, 53, 57, 83],
+ 105: [22, 39, 40, 86, 87],
+ 106: [5, 20, 25, 84, 94],
+ 107: [6, 7, 14, 18, 24],
+ 108: [3, 42, 43, 88, 97],
+ 109: [12, 17, 37, 68, 76],
+ 110: [23, 33, 49, 60, 71],
+ 111: [15, 19, 21, 31, 38],
+ 112: [34, 63, 64, 66, 75],
+ 113: [26, 45, 77, 79, 99],
+ 114: [2, 11, 35, 46, 98],
+ 115: [27, 29, 44, 78, 93],
+ 116: [36, 50, 65, 74, 80],
+ 117: [47, 52, 56, 59, 96],
+ 118: [8, 13, 48, 58, 90, 41, 69, 81, 85, 89]
+                              }
+
+cifar100_num_label_inverse_hierarchy={4: 100,
+ 30: 100,
+ 55: 100,
+ 72: 100,
+ 95: 100,
+ 1: 101,
+ 32: 101,
+ 67: 101,
+ 73: 101,
+ 91: 101,
+ 54: 102,
+ 62: 102,
+ 70: 102,
+ 82: 102,
+ 92: 102,
+ 9: 103,
+ 10: 103,
+ 16: 103,
+ 28: 103,
+ 61: 103,
+ 0: 104,
+ 51: 104,
+ 53: 104,
+ 57: 104,
+ 83: 104,
+ 22: 105,
+ 39: 105,
+ 40: 105,
+ 86: 105,
+ 87: 105,
+ 5: 106,
+ 20: 106,
+ 25: 106,
+ 84: 106,
+ 94: 106,
+ 6: 107,
+ 7: 107,
+ 14: 107,
+ 18: 107,
+ 24: 107,
+ 3: 108,
+ 42: 108,
+ 43: 108,
+ 88: 108,
+ 97: 108,
+ 12: 109,
+ 17: 109,
+ 37: 109,
+ 68: 109,
+ 76: 109,
+ 23: 110,
+ 33: 110,
+ 49: 110,
+ 60: 110,
+ 71: 110,
+ 15: 111,
+ 19: 111,
+ 21: 111,
+ 31: 111,
+ 38: 111,
+ 34: 112,
+ 63: 112,
+ 64: 112,
+ 66: 112,
+ 75: 112,
+ 26: 113,
+ 45: 113,
+ 77: 113,
+ 79: 113,
+ 99: 113,
+ 2: 114,
+ 11: 114,
+ 35: 114,
+ 46: 114,
+ 98: 114,
+ 27: 115,
+ 29: 115,
+ 44: 115,
+ 78: 115,
+ 93: 115,
+ 36: 116,
+ 50: 116,
+ 65: 116,
+ 74: 116,
+ 80: 116,
+ 47: 117,
+ 52: 117,
+ 56: 117,
+ 59: 117,
+ 96: 117,
+ 8: 118,
+ 13: 118,
+ 48: 118,
+ 58: 118,
+ 90: 118,
+ 41: 118,
+ 69: 118,
+ 81: 118,
+ 85: 118,
+ 89: 118}
+
