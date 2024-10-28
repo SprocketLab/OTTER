@@ -1,0 +1,27 @@
+name: otter
+channels:
+  - anaconda
+  - defaults
+dependencies:
+  - matplotlib
+  - pip
+  - python=3.9.17
+  - pip:
+      - accelerate
+      - clip
+      - cvxopt
+      - cvxpy
+      - ipykernel
+      - joblib
+      - json5
+      - jupyter
+      - numpy
+      - pandas
+      - pot==0.9.1
+      - scikit-learn
+      - scipy
+      - seaborn
+      - torch
+      - torchvision
+      - tqdm
+      - transformers
