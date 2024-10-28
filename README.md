@@ -1,6 +1,7 @@
 # OTTER: Effortless Label Distribution Adaptation of Zero-shot Models
-
-<img src="https://github.com/user-attachments/assets/7c4bc7b0-f4ea-4eae-84d1-b81b5d308642" alt="otter_with_buckets" width="400">
+<div align="center">
+<img src="https://github.com/user-attachments/assets/7c4bc7b0-f4ea-4eae-84d1-b81b5d308642" alt="otter_with_buckets" width="600">
+</div>
 
 
 [Changho Shin](https://ch-shin.github.io/), [Jitian Zhao](https://jzhao326.github.io/), [Sonia Cromp](https://socromp.github.io/), [Harit Vishwakarma](https://harit7.github.io/), [Frederic Sala](https://pages.cs.wisc.edu/~fredsala/)
