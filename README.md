@@ -26,3 +26,13 @@ and activate it with
 ```
 conda activate otter
 ```
+
+## Citation
+```tex
+@article{shin2024otter,
+  title={OTTER: Improving Zero-Shot Classification via Optimal Transport},
+  author={Shin, Changho and Zhao, Jitian and Cromp, Sonia and Vishwakarma, Harit and Sala, Frederic},
+  journal={arXiv preprint arXiv:2404.08461},
+  year={2024}
+}
+```
