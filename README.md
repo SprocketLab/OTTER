@@ -1,6 +1,8 @@
 # OTTER: Effortless Label Distribution Adaptation of Zero-shot Models
 [Changho Shin](https://ch-shin.github.io/), [Jitian Zhao](https://jzhao326.github.io/), [Sonia Cromp](https://socromp.github.io/), [Harit Vishwakarma](https://harit7.github.io/), [Frederic Sala](https://pages.cs.wisc.edu/~fredsala/)
+
 Advances in Neural Information Processing Systems 37 (NeurIPS 2024).
+
 Paper Link: [https://arxiv.org/abs/2404.08461](https://arxiv.org/abs/2404.08461)
 
 <div align="center">
