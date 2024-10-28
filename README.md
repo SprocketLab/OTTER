@@ -1,11 +1,9 @@
 # OTTER: Effortless Label Distribution Adaptation of Zero-shot Models
 
-This repository provides the official implementation of the following paper: 
-
-**OTTER: Effortless Label Distribution Adaptation of Zero-shot Models (NeurIPS 2024)**  
-Changho Shin, Jitian Zhao, Sonia Cromp, Harit Vishwakarma, Frederic Sala
+![otter_with_buckets](https://github.com/user-attachments/assets/7c4bc7b0-f4ea-4eae-84d1-b81b5d308642)
 
 
+[Changho Shin](https://ch-shin.github.io/), [Jitian Zhao](https://jzhao326.github.io/), [Sonia Cromp](https://socromp.github.io/), [Harit Vishwakarma](https://harit7.github.io/), [Frederic Sala](https://pages.cs.wisc.edu/~fredsala/)
 
 ## Installation
 
