@@ -27,6 +27,25 @@ and activate it with
 conda activate otter
 ```
 
+
+## Datasets
+
+Preprocessed datasets and cached embeddings can be downloaded [here](https://drive.google.com/file/d/1XVAWgBl3eFBWumOxL3nU5VNUoXe7fY3G/view?usp=drive_link) (~12GB). Dataset folder should be located under the project root folder, i.e.
+
+````
+```
+OTTER/
+    otter_data/
+    src/
+    notebooks/
+```
+````
+## Experiments
+
+* [Section 5.1 Real Data Experiments](https://github.com/SprocketLab/OTTER/blob/main/notebooks/TrueClassBalance.ipynb)
+* [Section 5.2 Synthetic Experiments](https://github.com/SprocketLab/OTTER/blob/main/notebooks/SyntheticBayesClassifierRecovery.ipynb)
+* [Section 5.3 Few-shot adaptation with label distribution estimation](https://github.com/SprocketLab/OTTER/blob/main/notebooks/FewshotWithClassBalanceEstimation.ipynb)
+
 ## Citation
 ```tex
 @article{shin2024otter,
